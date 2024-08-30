@@ -43,18 +43,19 @@ const headers = [
 const Datewise = () => {
   return (
     <div>
-      <h1>Date Wise Immersion Count</h1>
-      <table border="1" cellPadding="10">
+      <p className="h1 my-5">Date Wise Immersion Count</p>
+      <div className="table-responsive-xxl m-5">
+      <table className="table table-sm table-bordered border-dark  table-hover table-striped table-light">
         <thead>
           <tr>
-            <th rowSpan="2">S.No</th>
-            <th rowSpan="2">Date</th>
+            <th className="align-middle" rowSpan="2">S.No</th>
+            <th  className="align-middle" rowSpan="2">Date</th>
             {headers.map((header, index) => (
               <React.Fragment key={index}>
                 <th colSpan="2">{header.name}</th>
               </React.Fragment>
             ))}
-            <th rowSpan="2">Total</th>
+            <th className="align-middle" rowSpan="2">Total</th>
           </tr>
           <tr>
             {headers.map((header, index) => (
@@ -65,7 +66,7 @@ const Datewise = () => {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {data.map((row) => (
             <tr key={row.sNo}>
               <td>{row.sNo}</td>
@@ -82,7 +83,7 @@ const Datewise = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table></div>
     </div>
   );
 };
@@ -170,13 +171,14 @@ const PartyWiseInstallation = () => {
 
   return (
     <div>
-      <h2>Party-wise Installation Details</h2>
-      <table border="1" cellPadding="10">
+      <p className="h1 my-5">Party-wise Installation Details</p>
+      <div className="table-responsive-xxl m-5 ">
+      <table className="table table-sm table-bordered border-dark  table-hover table-striped table-light">
         <thead>
           <tr>
-            <th rowSpan="2">District</th>
+            <th className="align-middle"  rowSpan="2">District</th>
             <th colSpan={partyNames.length}>Party-wise/Organization/Public</th>
-            <th rowSpan="2">Total Count of Idols</th>
+            <th className="align-middle" rowSpan="2">Total Count of Idols</th>
           </tr>
           <tr>
             {partyNames.map((party) => (
@@ -201,7 +203,7 @@ const PartyWiseInstallation = () => {
             );
           })}
         </tbody>
-      </table>
+      </table></div>
     </div>
   );
 };
@@ -255,29 +257,30 @@ const IdolTable = () => {
 
   return (
     <div>
-        <h2>Registration count</h2>
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <p className="h1 my-5">Registration count</p>
+        <div className="table-responsive-xxl m-5">
+    <table className="table table-sm  table-bordered border-dark  table-hover table-striped table-light">
       <thead>
         <tr>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Category</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Sensitive</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Non-sensitive</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Hyper-sensitive</th>
-          <th style={{ border: "1px solid black", padding: "8px" }}>Total</th>
+          <th>Category</th>
+          <th>Sensitive</th>
+          <th>Non-sensitive</th>
+          <th>Hyper-sensitive</th>
+          <th>Total</th>
         </tr>
       </thead>
       <tbody>
         {tableData.map((row, index) => (
           <tr key={index}>
-            <td style={{ border: "1px solid black", padding: "8px" }}>{row.category}</td>
-            <td style={{ border: "1px solid black", padding: "8px" }}>{row.sensitive}</td>
-            <td style={{ border: "1px solid black", padding: "8px" }}>{row.nonSensitive}</td>
-            <td style={{ border: "1px solid black", padding: "8px" }}>{row.hyperSensitive}</td>
-            <td style={{ border: "1px solid black", padding: "8px" }}>{row.total}</td>
+            <td>{row.category}</td>
+            <td>{row.sensitive}</td>
+            <td>{row.nonSensitive}</td>
+            <td>{row.hyperSensitive}</td>
+            <td>{row.total}</td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </table></div>
    </div>
   );
 };
